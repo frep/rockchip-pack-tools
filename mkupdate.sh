@@ -2,10 +2,11 @@
 
 set -e
 
-cd `dirname $0`
+TOP=$(cd $(dirname $0) && pwd)
+cd $TOP
 
 rm -f update_tmp.img
 rm -f update.img
 
 ./afptool  -pack . update_tmp.img
-./img_maker -rk31 RK3188Loader\(L\)_V2.10.bin 1 0 0 update_tmp.img update.img
+./img_maker -rk31 RK3188Loader\(L\)_V2.19.bin 1 0 0 update_tmp.img update.img
